@@ -1,0 +1,11 @@
+version: "1.0"
+stage: "deployment"
+target_environment: "aws-free-tier-s3"
+declared_intent:
+  actions:
+    - "s3:PutObject"
+    - "s3:GetObject"
+  allowed_resources:
+    - "arn:aws:s3:::anisas-secure-deployment-bucket/*"
+  max_ttl_seconds: 300
+  vapt_requirement_score: 80
